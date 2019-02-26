@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jornadas de Trabajo</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+
+    {% block navbar %}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="{% url 'workday_list' %}" class="navbar-brand">
+          <img src="{% static 'images/hcmfront-logo.png' %}" alt="Logo" height="50px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="{% url 'workday_list' %}" class="nav-link">Jornadas</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'schedule_list' %}" class="nav-link">Horarios</a>
+            </li>
+          </ul>
+        </div>
+      </nav>  
+    {% endblock navbar %}
+
+    <br>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-10">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

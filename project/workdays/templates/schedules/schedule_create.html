@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+  <h2>Crear Nuevo Horario</h2>
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Crear</button>
+    {% endbuttons %}
+  </form>
+{% endblock %}
