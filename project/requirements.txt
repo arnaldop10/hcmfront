@@ -6,7 +6,7 @@ configparser==3.7.3
 curtsies==0.3.0
 Django==1.11.20
 django-bootstrap4==0.0.7
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 entrypoints==0.3
 enum34==1.1.6
 flake8==3.7.6
